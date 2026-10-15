@@ -146,6 +146,19 @@ class Clipboard {
     keyVUp?.flags = cmdFlag
     keyVDown?.post(tap: .cgSessionEventTap)
     keyVUp?.post(tap: .cgSessionEventTap)
+
+    // The synthetic ⌘V above can leave the session-level modifier flags believing
+    // that ⌘ is still held down. This happens when pasting without physically
+    // pressing ⌘ (e.g. selecting an item with a mouse click), as no real hardware
+    // flagsChanged event ever arrives to reconcile the state. The next keypress
+    // (e.g. "w") is then interpreted as ⌘-modified, closing windows, etc.
+    // Post a synthetic flagsChanged carrying the real hardware state to clear
+    // any residual synthetic modifiers.
+    if let flagsReset = CGEvent(keyboardEventSource: source, virtualKey: 0, keyDown: false) {
+      flagsReset.type = .flagsChanged
+      flagsReset.flags = CGEventSource.flagsState(.hidSystemState)
+      flagsReset.post(tap: .cgSessionEventTap)
+    }
   }
 
   func clear() {
