@@ -1,6 +1,7 @@
 "Title" = "外观";
 "PopupAt" = "弹窗位置：";
 "PopupAtCursor" = "光标";
+"PopupAtCaret" = "输入框光标";
 "PopupAtMenuBarIcon" = "菜单栏图标";
 "PopupAtWindowCenter" = "窗口中心";
 "PopupAtScreenCenter" = "屏幕中央";

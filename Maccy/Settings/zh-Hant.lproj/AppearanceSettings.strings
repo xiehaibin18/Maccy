@@ -1,6 +1,7 @@
 "Title" = "外觀";
 "PopupAt" = "彈窗位置：";
 "PopupAtCursor" = "滑鼠指標";
+"PopupAtCaret" = "輸入框游標";
 "PopupAtMenuBarIcon" = "選單列圖示";
 "PopupAtWindowCenter" = "窗口中心";
 "PopupAtScreenCenter" = "螢幕中央";

@@ -1,6 +1,7 @@
 "Title" = "Appearance";
 "PopupAt" = "Popup at:";
 "PopupAtCursor" = "Cursor";
+"PopupAtCaret" = "Text caret";
 "PopupAtMenuBarIcon" = "Menu icon";
 "PopupAtWindowCenter" = "Window center";
 "PopupAtScreenCenter" = "Screen center";
